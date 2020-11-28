@@ -9,15 +9,15 @@ const Player = ({audioRef,currentSong,isPlaying,setIsPlaying,setSongInfo,songInf
 
     //Function
 
-    let playSong = () =>{
+    const playSong = () =>{
+        console.log(isPlaying);
         if(isPlaying){
             audioRef.current.pause();
-            currentSong.active = false;
-            setIsPlaying(currentSong.active);
+            setIsPlaying(!isPlaying);
+            
         }else{
             audioRef.current.play();
-            currentSong.active = true;
-            setIsPlaying(currentSong.active);
+            setIsPlaying(!isPlaying);
         }
     }
 
