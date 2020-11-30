@@ -46,10 +46,10 @@ const Player = ({setSongs,audioRef,currentSong,isPlaying,setIsPlaying,setSongInf
         setSongInfo({...songInfo,currentTime : e.target.value});
     };
 
-    const skipSong = (direction) => {
+    const skipSong = async (direction) => {
         let currentIndex = songs.findIndex((song)=>song.id === currentSong.id);
         if(direction ==='skip-forward'){
-            setCurrentSong(songs[(currentIndex+1)%songs.length]);
+           await setCurrentSong(songs[(currentIndex+1)%songs.length]);
         }else{console.log(currentIndex);
             if(currentIndex < 1){
                 setCurrentSong(songs[songs.length-1]);

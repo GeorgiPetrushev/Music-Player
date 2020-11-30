@@ -16,17 +16,19 @@
 }
 
 .library-song{
+    cursor: pointer;
     display: flex;
     align-items: center;
-
     padding: 1rem 2rem 1rem 2rem;
+    transition: background 0.7s ease;
     img{
         width: 30%;
     }
+    &:hover{
+        background-color: rgb(176, 204, 255);;
+    }
 }
-.library-song:hover{
-    background-color: lightblue;
-}
+
 .song-info{
     padding-left: 1rem;
     h3{
@@ -38,7 +40,7 @@
 
 }
 .selected{
-    background-color: rgb(176, 204, 255);
+    background-color: rgb(140, 178, 250);
 }
 
 .active-library{
@@ -63,4 +65,11 @@
     border:transparent;
 
     
+}
+
+@media screen and (max-width: 768px){
+    .library{
+        width: 100%;
+    }
+
 }
